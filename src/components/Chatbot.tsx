@@ -17,8 +17,8 @@ const Chatbot = () => {
   const [showNotification, setShowNotification] = useState(true);
   const [messages, setMessages] = useState<Message[]>([
     {
-      role: "assistant",
-      content: "Hello! I'm here to help you learn about Anurag Srivastav's professional background, skills, and experience. What would you like to know?",
+          role: "assistant",
+          content: "Hello! I'm Lissa, here to help you learn about Anurag Srivastav's professional background, skills, and experience. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -144,7 +144,7 @@ const Chatbot = () => {
               <X className="h-4 w-4" />
             </button>
             <p className="text-sm text-gray-700 dark:text-gray-300 pr-4">
-              Hey! I am Anurag's Assistant. How can I help you today?
+              Hey! I'm Lissa, Anurag's Assistant. How can I help you today?
             </p>
           </div>
         )}
@@ -171,7 +171,7 @@ const Chatbot = () => {
             <div className="flex items-center gap-3">
               <img src={chatbotAvatar} alt="Assistant" className="h-10 w-10 rounded-full border-2 border-white object-cover" />
               <div>
-                <h3 className="font-semibold">Anurag's Assistant</h3>
+                <h3 className="font-semibold">Lissa</h3>
                 <p className="text-xs opacity-90">Online now</p>
               </div>
             </div>

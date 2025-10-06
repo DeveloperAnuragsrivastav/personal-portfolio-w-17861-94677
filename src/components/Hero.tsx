@@ -57,7 +57,7 @@ const Hero = () => {
                 document.body.removeChild(link);
               }}
             >
-              Resume
+              Download Resume
             </Button>
           </div>
 

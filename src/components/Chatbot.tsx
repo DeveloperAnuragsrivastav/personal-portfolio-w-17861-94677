@@ -14,12 +14,24 @@ interface Message {
 }
 
 const Chatbot = () => {
+  const playfulMessages = [
+    "Hey! I'm Lissa, Anurag's Assistant. How can I help you today?",
+    "Want to chat? Click me! 😊",
+    "Curious about Anurag? Let's talk!",
+    "Don't be shy, I don't bite! 😉",
+    "I've got all the answers... Click me!",
+    "Psst... want to know Anurag's secrets? 🤫",
+    "Ready to chat? I'm all ears! 👂",
+    "Click me! I promise I'm fun! ✨",
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [messages, setMessages] = useState<Message[]>([
     {
-          role: "assistant",
-          content: "Hello! I'm Lissa, here to help you learn about Anurag Srivastav's professional background, skills, and experience. What would you like to know?",
+      role: "assistant",
+      content: "Hello! I'm Lissa, here to help you learn about Anurag Srivastav's professional background, skills, and experience. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -27,6 +39,14 @@ const Chatbot = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
+
+  useEffect(() => {
+    // Rotate through playful messages
+    const messageInterval = setInterval(() => {
+      setCurrentMessageIndex((prev) => (prev + 1) % playfulMessages.length);
+    }, 3000);
+    return () => clearInterval(messageInterval);
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -172,8 +192,8 @@ const Chatbot = () => {
             >
               <X className="h-4 w-4" />
             </button>
-            <p className="text-sm text-gray-700 dark:text-gray-300 pr-4">
-              Hey! I'm Lissa, Anurag's Assistant. How can I help you today?
+            <p className="text-sm text-gray-700 dark:text-gray-300 pr-4 transition-all duration-300">
+              {playfulMessages[currentMessageIndex]}
             </p>
           </div>
         )}

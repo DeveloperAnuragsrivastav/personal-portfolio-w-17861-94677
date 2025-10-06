@@ -26,13 +26,6 @@ const Chatbot = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
-  useEffect(() => {
-    // Auto-hide notification after 5 seconds
-    const timer = setTimeout(() => {
-      setShowNotification(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {

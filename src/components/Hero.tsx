@@ -72,7 +72,7 @@ const Hero = () => {
               <Github className="h-5 w-5 md:h-6 md:w-6" />
             </a>
             <a 
-              href="https://linkedin.com/in/anuragsrivastav" 
+              href="https://www.linkedin.com/in/anurag-srivastav-717370326?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2.5 md:p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors"

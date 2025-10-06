@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -245,17 +246,33 @@ const Chatbot = () => {
                   {message.role === "assistant" && (
                     <img src={chatbotAvatar} alt="Assistant" className="h-8 w-8 rounded-full object-cover flex-shrink-0" />
                   )}
-                  <div
-                    className={`max-w-[75%] rounded-2xl p-3 ${
-                      message.role === "user"
-                        ? "bg-primary text-primary-foreground rounded-tr-none"
-                        : "bg-white dark:bg-gray-800 text-foreground rounded-tl-none shadow-sm"
-                    }`}
-                  >
-                    <p className="text-sm whitespace-pre-wrap leading-relaxed">
-                      {message.content}
-                    </p>
-                  </div>
+                    <div
+                      className={`max-w-[75%] rounded-2xl p-3 ${
+                        message.role === "user"
+                          ? "bg-primary text-primary-foreground rounded-tr-none"
+                          : "bg-white dark:bg-gray-800 text-foreground rounded-tl-none shadow-sm"
+                      }`}
+                    >
+                      <div className="text-sm leading-relaxed prose prose-sm max-w-none dark:prose-invert">
+                        <ReactMarkdown
+                          components={{
+                            p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                            strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                            em: ({ children }) => <em className="italic">{children}</em>,
+                            ul: ({ children }) => <ul className="list-disc pl-4 mb-2">{children}</ul>,
+                            ol: ({ children }) => <ol className="list-decimal pl-4 mb-2">{children}</ol>,
+                            li: ({ children }) => <li className="mb-1">{children}</li>,
+                            code: ({ children }) => (
+                              <code className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded text-xs">
+                                {children}
+                              </code>
+                            ),
+                          }}
+                        >
+                          {message.content}
+                        </ReactMarkdown>
+                      </div>
+                    </div>
                 </div>
               ))}
               {isLoading && (

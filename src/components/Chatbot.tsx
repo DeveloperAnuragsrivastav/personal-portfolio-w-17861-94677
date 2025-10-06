@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { X, Send, Loader2, Minimize2 } from "lucide-react";
+import { X, Send, Loader2, Minimize2, RotateCcw, Mail, Briefcase, User } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import chatbotAvatar from "@/assets/chatbot-avatar.png";
@@ -130,6 +130,34 @@ const Chatbot = () => {
     }
   };
 
+  const handleReset = () => {
+    setMessages([
+      {
+        role: "assistant",
+        content: "Hello! I'm Lissa, here to help you learn about Anurag Srivastav's professional background, skills, and experience. What would you like to know?",
+      },
+    ]);
+    setInput("");
+  };
+
+  const handleQuickAction = (action: string) => {
+    let message = "";
+    switch (action) {
+      case "contact":
+        message = "How can I contact Anurag?";
+        break;
+      case "skills":
+        message = "What are Anurag's technical skills?";
+        break;
+      case "about":
+        message = "Tell me about Anurag's background and experience.";
+        break;
+    }
+    if (message) {
+      setInput(message);
+    }
+  };
+
   return (
     <>
       {/* Floating Avatar Button */}
@@ -176,6 +204,15 @@ const Chatbot = () => {
               </div>
             </div>
             <div className="flex items-center gap-1">
+              <Button
+                onClick={handleReset}
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-primary-foreground hover:bg-white/20"
+                title="Reset chat"
+              >
+                <RotateCcw className="h-4 w-4" />
+              </Button>
               <Button
                 onClick={() => setIsOpen(false)}
                 variant="ghost"
@@ -231,6 +268,42 @@ const Chatbot = () => {
               )}
             </div>
           </ScrollArea>
+
+          {/* Quick Actions */}
+          <div className="px-4 py-2 bg-gray-50 dark:bg-gray-900 border-t">
+            <div className="flex gap-2 flex-wrap">
+              <Button
+                onClick={() => handleQuickAction("contact")}
+                variant="outline"
+                size="sm"
+                className="text-xs rounded-full"
+                disabled={isLoading}
+              >
+                <Mail className="h-3 w-3 mr-1" />
+                Contact
+              </Button>
+              <Button
+                onClick={() => handleQuickAction("skills")}
+                variant="outline"
+                size="sm"
+                className="text-xs rounded-full"
+                disabled={isLoading}
+              >
+                <Briefcase className="h-3 w-3 mr-1" />
+                Skills
+              </Button>
+              <Button
+                onClick={() => handleQuickAction("about")}
+                variant="outline"
+                size="sm"
+                className="text-xs rounded-full"
+                disabled={isLoading}
+              >
+                <User className="h-3 w-3 mr-1" />
+                About
+              </Button>
+            </div>
+          </div>
 
           {/* Input */}
           <div className="p-4 bg-white dark:bg-gray-800 border-t">

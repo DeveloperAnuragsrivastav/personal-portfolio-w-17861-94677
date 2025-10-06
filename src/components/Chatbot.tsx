@@ -5,7 +5,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { X, Send, Loader2, Minimize2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import logo from "@/assets/logo.png";
+import chatbotAvatar from "@/assets/chatbot-avatar.png";
 
 interface Message {
   role: "user" | "assistant";
@@ -158,7 +158,7 @@ const Chatbot = () => {
             }}
             className="h-16 w-16 rounded-full shadow-lg hover:shadow-xl transition-all overflow-hidden border-4 border-white dark:border-gray-800"
           >
-            <img src={logo} alt="Assistant" className="h-full w-full object-cover" />
+            <img src={chatbotAvatar} alt="Assistant" className="h-full w-full object-cover" />
           </button>
         )}
       </div>
@@ -169,7 +169,7 @@ const Chatbot = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Assistant" className="h-10 w-10 rounded-full border-2 border-white object-cover" />
+              <img src={chatbotAvatar} alt="Assistant" className="h-10 w-10 rounded-full border-2 border-white object-cover" />
               <div>
                 <h3 className="font-semibold">Anurag's Assistant</h3>
                 <p className="text-xs opacity-90">Online now</p>
@@ -206,7 +206,7 @@ const Chatbot = () => {
                   }`}
                 >
                   {message.role === "assistant" && (
-                    <img src={logo} alt="Assistant" className="h-8 w-8 rounded-full object-cover flex-shrink-0" />
+                    <img src={chatbotAvatar} alt="Assistant" className="h-8 w-8 rounded-full object-cover flex-shrink-0" />
                   )}
                   <div
                     className={`max-w-[75%] rounded-2xl p-3 ${
@@ -223,7 +223,7 @@ const Chatbot = () => {
               ))}
               {isLoading && (
                 <div className="flex items-start gap-2">
-                  <img src={logo} alt="Assistant" className="h-8 w-8 rounded-full object-cover" />
+                  <img src={chatbotAvatar} alt="Assistant" className="h-8 w-8 rounded-full object-cover" />
                   <div className="bg-white dark:bg-gray-800 rounded-2xl rounded-tl-none p-3 shadow-sm">
                     <Loader2 className="h-4 w-4 animate-spin text-primary" />
                   </div>

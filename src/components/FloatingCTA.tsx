@@ -23,7 +23,7 @@ const FloatingCTA = () => {
       {isVisible && (
         <Button
           onClick={handleClick}
-          className="fixed bottom-6 right-6 md:right-8 z-40 rounded-full shadow-2xl bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-6 glow-effect animate-fade-in group"
+          className="fixed bottom-24 right-6 md:bottom-6 md:right-24 z-40 rounded-full shadow-2xl bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-6 glow-effect animate-fade-in group"
           aria-label="Let's connect"
         >
           <MessageCircle className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />

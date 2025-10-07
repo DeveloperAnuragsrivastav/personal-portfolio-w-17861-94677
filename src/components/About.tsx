@@ -23,7 +23,7 @@ const About = () => {
         </h2>
         
         <Card className="p-6 md:p-12 bg-card/50 backdrop-blur-sm border-primary/20 card-shadow">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start mb-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
               <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-primary">Professional Summary</h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
@@ -64,29 +64,6 @@ const About = () => {
                   <p className="font-semibold text-sm md:text-base">Education</p>
                   <p className="text-muted-foreground text-sm md:text-base">BCA, Integral University</p>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Fun Facts Section */}
-          <div className="pt-8 border-t border-primary/20">
-            <h3 className="text-lg md:text-xl font-semibold mb-4 text-center text-accent">⚡ Quick Facts</h3>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-colors">
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">50+</div>
-                <div className="text-xs text-muted-foreground">Automations Built</div>
-              </div>
-              <div className="text-center p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-colors">
-                <div className="text-2xl md:text-3xl font-bold text-accent mb-1">24/7</div>
-                <div className="text-xs text-muted-foreground">AI Systems Running</div>
-              </div>
-              <div className="text-center p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-colors">
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">10K+</div>
-                <div className="text-xs text-muted-foreground">Code Commits</div>
-              </div>
-              <div className="text-center p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-colors">
-                <div className="text-2xl md:text-3xl font-bold text-accent mb-1">∞</div>
-                <div className="text-xs text-muted-foreground">Coffee Consumed</div>
               </div>
             </div>
           </div>

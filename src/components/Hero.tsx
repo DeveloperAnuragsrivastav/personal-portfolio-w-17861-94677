@@ -24,6 +24,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in">
+          <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
+            <p className="text-sm md:text-base text-accent font-medium">
+              ⚡ Available for Exciting Projects
+            </p>
+          </div>
+          
           <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6">
             Hi, I'm <span className="text-gradient">Anurag Srivastav</span>
           </h1>
@@ -31,7 +37,7 @@ const Hero = () => {
             AI Automation Specialist & Full-Stack Developer
           </p>
           <p className="text-sm md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto px-4">
-            Crafting enterprise automation solutions with cutting-edge AI
+            Transforming complex business challenges into elegant automated solutions
           </p>
           
           {/* CTA Buttons */}
